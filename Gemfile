@@ -18,6 +18,10 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'guard-spring'
 end
 
 group :test do
