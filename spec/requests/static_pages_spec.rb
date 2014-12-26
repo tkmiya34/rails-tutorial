@@ -11,9 +11,14 @@ RSpec.describe 'StaticPages', type: :request do
       expect(page).to have_content('Sample App')
     end
 
+    it 'should have the base title' do
+      visit page_url
+      expect(page).to have_title(base_title)
+    end
+
     it 'should have the right title' do
       visit page_url
-      expect(page).to have_title("#{base_title} | Home")
+      expect(page).not_to have_title("| Home")
     end
   end
 
