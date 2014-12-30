@@ -10,10 +10,9 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <main class="bs-docs-masthead" id="content" role="main">
-      <div class="container">
-        <%= yield %>
-      </div>
-    </main>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
