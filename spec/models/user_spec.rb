@@ -27,12 +27,12 @@ RSpec.describe User, type: :model do
 
   describe 'when email format is invalid' do
     it 'should be invalid' do
-      addresses = %w[
+      addresses = %w(
         user@foo,com
         user_at_foo.org
         example.user@foo.
         foo@var_baz.com foo@var+varz.com
-      ]
+      )
       addresses.each do |invalid_address|
         @user.email = invalid_address
         expect(@user).not_to be_valid
@@ -40,14 +40,14 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "when email format is valid" do
+  describe 'when email format is valid' do
     it 'should be valid' do
-      addresses = %w[
+      addresses = %w(
         user@foo.COM
         A_US-ER@f.b.org
         frst.lst@foo.jp
         a+b@baz.cn
-      ]
+      )
       addresses.each do |valid_address|
         @user.email = valid_address
         expect(@user).to be_valid
