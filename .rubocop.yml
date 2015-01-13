@@ -1,0 +1,12 @@
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
