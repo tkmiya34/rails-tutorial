@@ -49,7 +49,9 @@ RSpec.describe User, type: :model do
         user@foo,com
         user_at_foo.org
         example.user@foo.
-        foo@var_baz.com foo@var+varz.com
+        foo@var_baz.com
+        foo@var+varz.com
+        foo@bar..com
       ]
       addresses.each do |invalid_address|
         @user.email = invalid_address
