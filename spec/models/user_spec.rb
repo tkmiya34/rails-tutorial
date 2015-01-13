@@ -33,13 +33,25 @@ RSpec.describe User, type: :model do
     it { should_not be_valid }
   end
 
+  describe "when email with mixed case" do
+    let(:mixed_case_email) { "Foo@Example.Com" }
+
+    it "should be saved as all lower-case" do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq mixed_case_email.downcase
+    end
+  end
+
   describe 'when email format is invalid' do
     it 'should be invalid' do
       addresses = %w[
         user@foo,com
         user_at_foo.org
         example.user@foo.
-        foo@var_baz.com foo@var+varz.com
+        foo@var_baz.com
+        foo@var+varz.com
+        foo@bar..com
       ]
       addresses.each do |invalid_address|
         @user.email = invalid_address
