@@ -1,0 +1,17 @@
+language: ruby
+
+rvm:
+  - 2.1.5
+bundler_args: --without development
+
+env:
+  - DB=postgresql
+
+script:
+  - bundle exec rake db:setup
+  - bundle exec rspec
+
+cache: bundler
+
+notifications:
+  email: false
