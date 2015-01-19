@@ -3,3 +3,6 @@
 
 # COVERALLS
 [![Coverage Status](https://coveralls.io/repos/tkmiya34/rails-tutorial/badge.svg?branch=setting-travisci)](https://coveralls.io/r/tkmiya34/rails-tutorial?branch=setting-travisci)
+
+# Code Climate
+[![Code Climate](https://codeclimate.com/github/tkmiya34/rails-tutorial/badges/gpa.svg)](https://codeclimate.com/github/tkmiya34/rails-tutorial)
