@@ -30,6 +30,8 @@ end
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'coveralls', require: false
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :doc do
