@@ -25,6 +25,8 @@ group :development, :test do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'guard-spring'
+  gem 'byebug'
+  gem 'pry-rails'
 end
 
 group :test do
