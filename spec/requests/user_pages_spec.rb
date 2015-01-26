@@ -49,7 +49,7 @@ RSpec.describe 'User Pages', type: :request do
 
         it { should have_link('Sign out') }
         it { should have_title(user.name) }
-        it { should have_success_message}
+        it { should have_success_message }
       end
     end
   end

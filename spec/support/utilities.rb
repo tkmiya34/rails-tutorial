@@ -32,7 +32,7 @@ RSpec::Matchers.define :have_message do
 end
 
 RSpec::Matchers.define :be_signin_header do
-  match do |page|
+  match do
     should have_link('Profile',  href: user_path(user))
     should have_link('Sign out', href: signout_path)
     should_not have_link('Sign in',  href: signin_path)
