@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     # user = User.find_by(email: params[:session][:email].downcase)
     # if user && user.authenticate(params[:session][:password])
-    user = authenticate(params[:session][:email], params[:session][:password])
+    user = authenticate(params[:email], params[:password])
     if user
       # プロフィールページへリダイレクト
       sign_in user

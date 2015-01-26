@@ -38,12 +38,7 @@ RSpec.describe 'User Pages', type: :request do
 
     describe 'with valid information' do
       let(:user) { FactoryGirl.build(:user) }
-      before do
-        fill_in 'Name',         with: user.name
-        fill_in 'Email',        with: user.email
-        fill_in 'Password',     with: user.password
-        fill_in 'Confirmation', with: user.password_confirmation
-      end
+      before { valid_signup user }
 
       it 'should create a user' do
         expect { click_button submit }.to change(User, :count).by(1)
@@ -54,7 +49,7 @@ RSpec.describe 'User Pages', type: :request do
 
         it { should have_link('Sign out') }
         it { should have_title(user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        it { should have_success_message }
       end
     end
   end

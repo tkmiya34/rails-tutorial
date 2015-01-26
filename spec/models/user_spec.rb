@@ -92,7 +92,8 @@ RSpec.describe User, type: :model do
       @user = User.new(
             name: '星宮いちご',
             email: 'i-hoshimiya@star-light.ac',
-            password: '', password_confirmation: '')
+            password: '',
+            password_confirmation: '')
     end
     it { should_not be_valid }
   end
