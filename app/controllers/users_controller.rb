@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = 'Profile updated'
       redirect_to @user
     else
       render 'edit'
@@ -40,10 +40,10 @@ class UsersController < ApplicationController
   end
 
   def signed_in_user
-    unless signed_in?
-      store_location
-      redirect_to signin_url, flash: { warning: "Please sign in." } unless signed_in?
-    end
+    return if signed_in?
+
+    store_location
+    redirect_to signin_url, flash: { warning: 'Please sign in.' } unless signed_in?
   end
 
   def corrent_user

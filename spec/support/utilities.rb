@@ -7,7 +7,7 @@ def valid_signup(user)
   fill_in 'Confirmation', with: user.password_confirmation
 end
 
-def sign_in(user, options={})
+def sign_in(user, options = {})
   if options[:no_capybara]
     # Capybaraを使用していない場合にもサインインする。
     remember_token = User.new_remember_token
