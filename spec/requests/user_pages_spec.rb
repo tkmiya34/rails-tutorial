@@ -135,10 +135,11 @@ RSpec.describe 'User Pages', type: :request do
       specify { expect(user.reload.email).to eq new_email }
     end
 
-    describe "forbidden attributes" do
+    describe 'forbidden attributes' do
       let(:params) do
-        { user: { admin: true, password: user.password,
-          password_confirmation: user.password } }
+        { user: { admin: true,
+                  password: user.password,
+                  password_confirmation: user.password } }
       end
       before do
         sign_in user, no_capybara: true

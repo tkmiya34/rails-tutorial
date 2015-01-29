@@ -38,7 +38,7 @@ RSpec.describe 'Authentications', type: :request do
       it { should have_link('Sign out',     href: signout_path) }
       it { should_not have_link('Sign in',  href: signin_path) }
 
-      describe 'folllowd by signout' do
+      describe 'followd by signout' do
         before { click_link 'Sign out' }
 
         it { should_not have_title(user.name) }
