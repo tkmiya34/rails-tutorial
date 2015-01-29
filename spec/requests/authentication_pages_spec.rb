@@ -51,6 +51,28 @@ RSpec.describe 'Authentications', type: :request do
   end
 
   describe 'authorization' do
+    describe 'for signed-in users' do
+      let(:user) { FactoryGirl.create(:user) }
+      before { sign_in user, no_capybara: true }
+
+      describe 'in the Users controller' do
+        describe 'submitting to the new action' do
+          before do
+            get signup_path
+          end
+
+          specify { expect(response).to redirect_to(root_url) }
+        end
+
+        describe 'submitting to the create action' do
+          let(:new_user) { FactoryGirl.build(:user, email: 'new_user@example.com') }
+          before { post users_path(new_user) }
+
+          specify { expect(response).to redirect_to(root_url) }
+        end
+      end
+    end
+
     describe 'for non-signed-in users' do
       let(:user) { FactoryGirl.create(:user) }
 
