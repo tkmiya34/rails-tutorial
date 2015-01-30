@@ -10,3 +10,12 @@ Metrics/LineLength:
 Style/StringLiterals:
   EnforcedStyle: single_quotes
   Enabled: true
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
