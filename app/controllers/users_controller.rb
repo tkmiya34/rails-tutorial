@@ -20,10 +20,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = 'Welcome to the Sample App!'
+      flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -32,10 +32,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = 'Profile updated'
+      flash[:success] = "Profile updated"
       redirect_to @user
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     return redirect_to(root_path) if current_user?(user)
 
     user.destroy
-    flash[:success] = 'User destroyed'
+    flash[:success] = "User destroyed"
     redirect_to users_url
   end
 
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     return if signed_in?
 
     store_location
-    redirect_to signin_url, flash: { warning: 'Please sign in.' } unless signed_in?
+    redirect_to signin_url, flash: { warning: "Please sign in." } unless signed_in?
   end
 
   def corrent_user

@@ -12,15 +12,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20_150_129_032_017) do
-  create_table 'users', force: true do |t|
-    t.string 'name'
-    t.string 'email'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
-    t.string 'password_digest'
-    t.string 'remember_token'
-    t.boolean 'admin',           default: false
+  create_table "users", force: true do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "password_digest"
+    t.string "remember_token"
+    t.boolean "admin",           default: false
   end
 
-  add_index 'users', ['remember_token'], name: 'index_users_on_remember_token'
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 end
