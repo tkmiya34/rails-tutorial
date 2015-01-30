@@ -19,6 +19,7 @@ RSpec.describe User, type: :model do
   it { should respond_to(:authenticate) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:admin) }
+  it { should respond_to(:microposts) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -137,6 +138,6 @@ RSpec.describe User, type: :model do
 
   describe "remember token" do
     before { @user.save }
-    it(:remember_token) { should_not be_blank }
+    its(:remember_token) { should_not be_blank }
   end
 end
