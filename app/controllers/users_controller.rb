@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, only: [:edit, :update]
+  before_action :corrent_user, only: [:edit, :update]
+
+  def index
+    @users = User.paginate(page: params[:page])
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -18,9 +25,33 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = 'Profile updated'
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def signed_in_user
+    return if signed_in?
+
+    store_location
+    redirect_to signin_url, flash: { warning: 'Please sign in.' } unless signed_in?
+  end
+
+  def corrent_user
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user?(@user)
   end
 end
