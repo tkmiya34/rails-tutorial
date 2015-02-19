@@ -186,8 +186,7 @@ input {
 
 .microposts {
   list-style: none;
-  margin: 10px 0 0 0;
-
+  margin: 10px 0 0;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8d8d8;
@@ -197,12 +196,15 @@ input {
 .content {
   display: block;
 }
+
 .timestamp {
   color: $gray-light;
 }
+
 .gravatar {
   color: $gray-light;
 }
+
 aside {
   textarea {
     height: 100px;
