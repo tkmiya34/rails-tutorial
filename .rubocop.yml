@@ -8,5 +8,14 @@ Metrics/LineLength:
   Enabled: false
 
 Style/StringLiterals:
-  EnforcedStyle: single_quotes
+  EnforcedStyle: double_quotes
   Enabled: true
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false

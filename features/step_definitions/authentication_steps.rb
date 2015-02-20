@@ -3,7 +3,7 @@ Given /^a user visits the signin page$/ do
 end
 
 When /^he submits invalid signin infomation$/ do
-  click_button 'Sign in'
+  click_button "Sign in"
 end
 
 Then /^he should see an error message$/ do
@@ -15,9 +15,9 @@ Then /^the user has an account$/ do
 end
 
 Then /^the user submits valid signin infomation$/ do
-  fill_in 'Email', with: @user.email
-  fill_in 'Password', with: @user.password
-  click_button 'Sign in'
+  fill_in "Email", with: @user.email
+  fill_in "Password", with: @user.password
+  click_button "Sign in"
 end
 
 Then /^he should see his profile page$/ do
@@ -25,5 +25,5 @@ Then /^he should see his profile page$/ do
 end
 
 Then /^he should see a signout link$/ do
-  expect(page).to have_link('Sign out', href: signout_path)
+  expect(page).to have_link("Sign out", href: signout_path)
 end
