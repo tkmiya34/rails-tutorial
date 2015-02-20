@@ -3,10 +3,10 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   before do
     @user = User.new(
-        name: "星宮いちご",
-        email: "i-hoshimiya@star-light.ac",
-        password: "foobar",
-        password_confirmation: "foobar")
+      name: "星宮いちご",
+      email: "i-hoshimiya@star-light.ac",
+      password: "foobar",
+      password_confirmation: "foobar")
   end
 
   subject { @user }
